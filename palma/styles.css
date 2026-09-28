@@ -4,6 +4,7 @@
 
 body{
     display: grid;
+     /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     grid-template-areas: 'header-area header-area header-area'
 'main-area main-area aside-area'
 'footer-area footer-area footer-area';
@@ -50,7 +51,6 @@ footer {
     grid-area: footer-area;
     background: rgb(118, 192, 16);
     height: 5vh;
-    padding: 5px;
     border-top: 2px solid black;
     display: flex;
     align-items: center;
