@@ -1,3 +1,14 @@
 body {
-  background: linear-gradient(135deg, #f96, #ff5e62);
+  background: lightgoldenrodyellow;;
+}
+
+header{
+  display:flex;
+  flex-direction: column;
+}
+
+img{
+  width: 400px;
+  height: 260px;
+  display: flex;
 }
