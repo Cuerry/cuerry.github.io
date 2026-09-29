@@ -54,6 +54,7 @@ nav a,
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  background-image: url(images/hero.svg);
 }
 
 .hero-texto {
@@ -319,4 +320,18 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #ff6b2c;
   color: white;
+}
+
+.codepen-embed {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.artigos-tutoriais article iframe {
+  border: 0;
 }
