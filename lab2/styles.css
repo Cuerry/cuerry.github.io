@@ -1,6 +1,61 @@
-body {
-  background: lightgoldenrodyellow;
+*{
+  body-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+  margin: 0;
+  padding: 20px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+footer p {
+  margin: 0;
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  margin-top: 8px;
+}
+
+main {
+  background-color: white;
+  margin: 20px 8px 10px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
 
 header{
   display:flex;
@@ -66,4 +121,294 @@ th{
 td{
   color: darkslateblue;
   background: lightgreen;
+}
+
+/* ---------- Menu responsivo (flex + media query) ---------- */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #4caf50;
+}
+
+/* Ecrã grande: links maiores e mais espaçados */
+@media (min-width: 900px) {
+  nav {
+    justify-content: space-evenly;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 10px 24px;
+  }
+}
+
+/* Telemóvel: links em grelha 2x2, dentro do header */
+@media (max-width: 599px) {
+  nav a {
+    flex: 1 1 40%;
+    padding: 12px 8px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* resto das páginas no telemóvel */
+  section div p:nth-child(odd),
+  section div p:nth-child(even) {
+    width: auto;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+
+/* ---------- Sections da página multimédia ---------- */
+#fotografias {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #e8f5e9;
+}
+
+#video {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#poema {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f3e5f5;
+}
+
+/* ---------- Secção emblemática (position) ---------- */
+.secao-emblematica {
+  min-height: 100vh;
+  padding: 0;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+}
+
+.imagem-emblematica {
+  position: relative;
+  width: 100%;
+}
+
+.imagem-emblematica img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.frase-emblematica {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+/* ---------- Transition nas fotografias pequenas ---------- */
+.fotografias img {
+  transition: width 0.4s, height 0.4s;
+}
+
+.fotografias img:hover {
+  width: 220px;
+  height: 150px;
+}
+
+/* ---------- Localização: lado a lado no PC ---------- */
+.layout-localizacao {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.layout-localizacao p {
+  flex: 1;
+}
+
+.layout-localizacao iframe {
+  flex: 1;
+  height: 400px;
+  width: 100%;
+}
+
+/* Telemóvel: texto por cima do mapa */
+@media (max-width: 599px) {
+  .layout-localizacao {
+    flex-direction: column;
+  }
+
+  .layout-localizacao iframe {
+    height: 300px;
+  }
+}
+
+/* ---------- Grelha da página de informações ---------- */
+.grelha-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.celula img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* posições na grelha */
+.celula-intro      { grid-column: 1 / 3; grid-row: 1; }
+.celula-imagem1    { grid-column: 3;     grid-row: 1; }
+.celula-vazio1     { grid-column: 1;     grid-row: 2; }
+.celula-tabela     { grid-column: 2 / 4; grid-row: 2; }
+.celula-imagem2    { grid-column: 1;     grid-row: 3; }
+.celula-curiosidades { grid-column: 2 / 4; grid-row: 3; }
+.celula-vazio2     { grid-column: 2;     grid-row: 4; }
+.celula-imagem3    { grid-column: 3;     grid-row: 4; }
+
+
+/* ---------- Grelha da página de informações ---------- */
+.grelha-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.grelha-info .celula img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* linha 1: intro larga + ponte alta (ocupa linhas 1 e 2) */
+.celula-intro   { grid-column: 1 / 3; grid-row: 1; }
+.celula-ponte   { grid-column: 3;     grid-row: 1 / 3; }
+
+/* linha 2: tabela + vazio */
+.celula-tabela  { grid-column: 1;     grid-row: 2; }
+.celula-barcos  { grid-column: 2;     grid-row: 2; }
+
+/* linha 3: barcos + edifício + vazio */
+.celula-edificio      { grid-column: 1;     grid-row: 3; }
+.celula-vazio         { grid-column: 2;     grid-row: 3; }
+.celula-curiosidades  { grid-column: 3;     grid-row: 3; }
+
+/* linha 4: farol largo + mar + barco aéreo */
+.celula-farol         { grid-column: 1 / 3; grid-row: 4; }
+.celula-mar           { grid-column: 3;     grid-row: 4; }
+
+/* alturas fixas por linha */
+.celula-intro,
+.celula-tabela,
+.celula-barcos    { min-height: 200px; }
+
+.celula-ponte     { min-height: 420px; }
+
+.celula-edificio,
+.celula-vazio,
+.celula-curiosidades { min-height: 220px; }
+
+.celula-farol,
+.celula-mar,
+.celula-barco-aereo  { min-height: 200px; }
+
+.video-background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-background video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-conteudo {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.parallax {
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("images/tejo.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.parallax-conteudo {
+  max-width: 700px;
+  padding: 45px;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.parallax-subtitulo {
+  margin-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.parallax-conteudo h3 {
+  margin: 0 0 20px;
+  font-size: 42px;
+}
+
+.parallax-conteudo p:last-child {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
 }

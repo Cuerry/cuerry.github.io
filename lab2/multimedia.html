@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="styles2.css" />
     <title>Multimédia</title>
   </head>
   <body>
@@ -26,8 +25,8 @@
         <a href="#video">Vídeo</a>
         <a href="#poema">Poema</a>
       </p>
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
+      <section id="fotografias">
+        <h3>Fotografias</h3>
         <div class="fotografias">
           <img src="images/lx1.jpg" alt="arco da rua augusta" />
           <img src="images/lx2.jpg" alt="praça do comércio" />
@@ -39,8 +38,8 @@
           <img src="images/lx8.jpg" alt="praça de touros do campo pequeno" />
         </div>
       </section>
-      <section>
-        <h3 id="video">Vídeo</h3>
+      <section id="video">
+        <h3>Vídeo</h3>
         <iframe
           width="560"
           height="315"
@@ -59,28 +58,54 @@
           allowfullscreen
         ></iframe>
       </section>
-      <section>
-        <h3 id="poema">Poesia</h3>
+      <section id="poema">
+        <h3>Poesia</h3>
         <div>
           <p>Lisboa acorda banhada de luz,</p>
           <p>Com o Tejo a seus pés a brilhar,</p>
           <p>Entre colinas a cidade conduz,</p>
           <p>E há sempre uma rua para descobrir e caminhar.</p>
-
           <p>Nos elétricos que sobem devagar,</p>
           <p>Ecoam histórias de outros tempos,</p>
           <p>Enquanto o vento vem do mar,</p>
           <p>E leva consigo antigos pensamentos.</p>
-
           <p>Nas ruas estreitas de Alfama,</p>
           <p>O fado deixa a sua melodia,</p>
           <p>E quando a noite lentamente chama,</p>
           <p>Lisboa transforma-se em poesia.</p>
-
           <p>Ao longe, o Tejo encontra o céu,</p>
           <p>E a cidade adormece devagar,</p>
           <p>Lisboa guarda aquilo que viveu,</p>
           <p>E deixa sempre vontade de voltar.</p>
+        </div>
+      </section>
+      <section id="emblematica" class="secao-emblematica">
+        <div class="imagem-emblematica">
+          <img src="images/montanha.jpg" alt="Machapuchare ao amanhecer" />
+          <p class="frase-emblematica">A beleza está no cume.</p>
+        </div>
+      </section>
+      <section class="video-background">
+        <video autoplay muted loop playsinline>
+          <source
+            src="https://pixabay.com/pt/videos/download/x-364184_medium.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="video-conteudo">
+          <h3>Lisboa</h3>
+          <p>Uma cidade entre o rio e as colinas.</p>
+        </div>
+      </section>
+      <section class="parallax">
+        <div class="parallax-conteudo">
+          <p class="parallax-subtitulo">LISBOA</p>
+          <h3>Uma cidade para descobrir</h3>
+          <p>
+            Entre o Tejo, as colinas e as ruas históricas, Lisboa guarda sempre
+            um lugar para explorar.
+          </p>
         </div>
       </section>
     </main>

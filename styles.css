@@ -1,15 +1,322 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #b3b3b3;
+  background-color: #eef2f7;
+  color: #14283f;
 }
 
-img{
-  width: 500px;
-  display:flex;
-  text-align: center;
-}
-
-footer{
+/* ---------- Header + menu ---------- */
+header {
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  padding: 0 40px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #14283f;
+  color: white;
 }
 
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+}
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a,
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background-color: #14283f;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.hero-texto {
+  max-width: 600px;
+  padding: 30px;
+  background-color: #14283f;
+}
+
+.hero-universidade {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.hero-frase-motivacional {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.botao-projetos {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background-color: #ff6b2c;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------- Projetos ---------- */
+.projetos {
+  height: 100vh;
+  padding: 12vh 40px 0 40px;
+  background-color: #eef2f7;
+}
+
+.projetos h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #14283f;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* ---------- Disciplina ---------- */
+.disciplina {
+  height: 100vh;
+  padding: 12vh 40px 0 40px;
+  background-color: #d9e2ef;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.disciplina h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.disciplina-texto {
+  flex: 1;
+}
+
+.disciplina-texto p {
+  margin-bottom: 15px;
+}
+
+.disciplina-texto ul {
+  margin-bottom: 15px;
+  padding-left: 25px;
+}
+
+.disciplina-texto a {
+  color: #ff6b2c;
+  font-weight: bold;
+}
+
+.disciplina img {
+  flex: 1;
+  width: 50%;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+/* ---------- Telemóvel ---------- */
+@media (max-width: 767px) {
+  header {
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero-texto {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-frase-motivacional {
+    font-size: 18px;
+  }
+
+  .projetos {
+    padding: 20px;
+    height: auto;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .disciplina {
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+
+  .disciplina img {
+    width: 100%;
+  }
+}
+
+/* ---------- Videotutoriais ---------- */
+.tutoriais {
+  min-height: 100vh;
+  padding: 12vh 40px 40px 40px;
+  background-color: #eef2f7;
+}
+
+.tutoriais h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.artigos-tutoriais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.artigos-tutoriais article {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #14283f;
+  border-radius: 12px;
+}
+
+.artigos-tutoriais article h3 {
+  margin-bottom: 10px;
+}
+
+.artigos-tutoriais article iframe {
+  width: 100%;
+  height: 220px;
+}
+
+/* ---------- CodePens ---------- */
+.codepens {
+  min-height: 100vh;
+  padding: 12vh 40px 40px 40px;
+  background-color: #d9e2ef;
+}
+
+.codepens h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.artigos-codepens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.artigos-codepens article {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #14283f;
+  border-radius: 12px;
+}
+
+.artigos-codepens article h3 {
+  margin-bottom: 10px;
+}
+
+/* ---------- Telemóvel: tutoriais e codepens ---------- */
+@media (max-width: 767px) {
+  .tutoriais,
+  .codepens {
+    padding: 20px;
+  }
+
+  .artigos-tutoriais article,
+  .artigos-codepens article {
+    min-width: 100%;
+  }
+}
+
+nav ul li a {
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+nav ul li a:hover {
+  background-color: #ff6b2c;
+  color: white;
+}

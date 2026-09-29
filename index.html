@@ -2,47 +2,589 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primeira Página</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Primeira Página Web!</h1>
+      <a class="logo" href="#inicio">DIW</a>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#cadeira">Interfaces Web</a></li>
+          <li><a href="#videotutoriais">Tutoriais</a></li>
+          <li><a href="#codepens">CodePens</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <p>Eis a minha primeira página Web!</p>
-      <p>
-        Na Unidade Curricular de
-        <a
-          target="_blank"
-          href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
-        >
-          Desenvolvimento de Interfaces Web</a
-        >
-        abordaremos as seguintes tecnologias Web &#127760;:
-      </p>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>React e Next.js</li>
-      </ul>
-      <p>Iremos criar soluções criativas!</p>
+      <section
+        id="inicio"
+        class="hero"
+        style="background-image: url(images/hero.svg)"
+      >
+        <div class="hero-texto">
+          <p class="hero-universidade">Universidade Lusófona</p>
+          <h1>Primeira Página Web!</h1>
+          <p class="hero-frase-motivacional">
+            Transformo ideias em experiências web criativas.
+          </p>
+          <a class="botao-projetos" href="#projetos">Ver os meus projetos</a>
+        </div>
+      </section>
 
-      <nav>
-        <ul>
-          <li><a href="lab1/index.html">Lab1</a></li>
-          <li><a href="lab2/index.html">Lab2</a></li>
-          <li><a href="lab3/index.html">Lab3</a></li>
-          <li><a href="palma/index.html">Palma</a></li>
-        </ul>
-      </nav>
-      <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
+      <section id="projetos" class="projetos">
+        <h2>Projetos / Labs</h2>
+        <p class="subtitulo">Alguns exercícios desenvolvidos ao longo da UC.</p>
+        <div class="cards">
+          <a class="card" href="lab1/index.html">
+            <h3>Lab 1</h3>
+            <p>Estrutura base e semântica</p>
+          </a>
+          <a class="card" href="lab2/index.html">
+            <h3>Lab 2</h3>
+            <p>Estilos e layout responsivo</p>
+          </a>
+          <a class="card" href="lab3/index.html">
+            <h3>Lab 3</h3>
+            <p>Interatividade com JS</p>
+          </a>
+          <a class="card" href="palma/index.html">
+            <h3>Palma</h3>
+            <p>Exercício Palma</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="cadeira" class="disciplina">
+        <div class="disciplina-texto">
+          <h2>Interfaces Web</h2>
+          <p>Eis a minha primeira página Web!</p>
+          <p>
+            Na Unidade Curricular de
+            <a
+              target="_blank"
+              href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
+            >
+              Desenvolvimento de Interfaces Web</a
+            >
+            abordaremos as seguintes tecnologias Web &#127760;:
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>React e Next.js</li>
+          </ul>
+          <p>Iremos criar soluções criativas!</p>
+        </div>
+        <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
+      </section>
+
+      <section id="videotutoriais" class="tutoriais">
+        <h2>Videotutoriais</h2>
+        <div class="artigos-tutoriais">
+          <article>
+            <h3>Seletores CSS e sua composição</h3>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Z1x01LlQiVM?si=z0ic5YnqFq415gdV"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article>
+            <h3>Flexbox</h3>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/U0hUQq6KhT0?si=6wc_Ci8qAbbZ8Gvv"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article>
+            <h3>CSS Grid</h3>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/o2GGy8P6ccI?si=9oKRvRg8oK5yqrG9"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article>
+            <h3>Responsividade com @media queries</h3>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/MvxYSPzU1S8?si=ysIks70qs-5AM4xq"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </article>
+        </div>
+      </section>
+
+      <section id="codepens" class="codepens">
+        <h2>CodePens</h2>
+        <div class="artigos-codepens">
+          <article>
+            <h3>Pergunta @media query</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="pergunta @media query"
+              data-default-tab="html,result"
+              data-slug-hash="ByWReqB"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/ByWReqB"
+                  >pergunta @media query</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Pergunta 2 @media query</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="pergunta 2 @media query"
+              data-default-tab="html,result"
+              data-slug-hash="PwpmvVM"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/PwpmvVM"
+                  >pergunta 2 @media query</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>SPA com menu sticky</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="SPA com menu sicky"
+              data-default-tab="html,result"
+              data-slug-hash="myWwbdL"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/myWwbdL"
+                  >SPA com menu sicky</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício Flexbox</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício Flexbox"
+              data-default-tab="html,result"
+              data-slug-hash="Wbpjqxo"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/Wbpjqxo"
+                  >Exercício Flexbox</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício CSS Grid Layout</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício CSS grid layout"
+              data-default-tab="html,result"
+              data-slug-hash="PwpmrWP"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/PwpmrWP"
+                  >Exercício CSS grid layout</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Background com vídeo</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="background com vídeo"
+              data-version="2"
+              data-default-tab="html,result"
+              data-slug-hash="KwWvWPy"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a
+                  href="https://codepen.io/editor/cuerty/pen/01a0ee14-d52d-729d-be97-78dd613d0d85"
+                  >background com vídeo</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício Layout</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício layout"
+              data-default-tab="html,result"
+              data-slug-hash="ByWddop"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/ByWddop"
+                  >Exercício layout</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício 1</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício 1"
+              data-default-tab="html,result"
+              data-slug-hash="KwWamXq"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/KwWamXq">Exercício 1</a>
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício 2: Colorir com CSS</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício 2: colorir com CSS"
+              data-default-tab="html,result"
+              data-slug-hash="EaWZmoe"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/EaWZmoe"
+                  >Exercício 2: colorir com CSS</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício 5</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício 5"
+              data-default-tab="html,result"
+              data-slug-hash="PwpWmRZ"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/PwpWmRZ">Exercício 5</a>
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício 3</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício 3"
+              data-default-tab="html,result"
+              data-slug-hash="qErRmpg"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/qErRmpg">Exercício 3</a>
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>CSS Flexbox-start</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="CSS Flexbox-start"
+              data-default-tab="html,result"
+              data-slug-hash="OPpmMNQ"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/OPpmMNQ"
+                  >CSS Flexbox-start</a
+                >
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+
+          <article>
+            <h3>Exercício 4</h3>
+            <p
+              class="codepen"
+              data-height="300"
+              data-pen-title="Exercício 4"
+              data-default-tab="html,result"
+              data-slug-hash="ogZBWpO"
+              data-user="cuerty"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/cuerty/pen/ogZBWpO">Exercício 4</a>
+                by Henrique (<a href="https://codepen.io/cuerty">@cuerty</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
-
     <footer>
       <p>Universidade Lusófona 2025</p>
     </footer>
+    <script
+      async
+      src="https://public.codepenassets.com/embed/index.js"
+    ></script>
   </body>
 </html>

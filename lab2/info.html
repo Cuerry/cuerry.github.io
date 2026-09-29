@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="styles2.css" />
     <title>Info</title>
   </head>
   <body>
@@ -20,67 +19,99 @@
     </header>
     <main>
       <h2>Informações</h2>
-      <p>
-        Lisboa é a capital de Portugal e uma das cidades mais antigas da Europa.
-        Na tabela abaixo encontra os principais dados sobre a sua população,
-        área e localização, seguidos de algumas curiosidades sobre a sua
-        história, os seus monumentos e os símbolos que fazem parte da identidade
-        da cidade.
-      </p>
-      <table>
-        <!-- [html-validate-disable-next prefer-tbody] -->
-        <tr>
-          <th rowspan="2" scope="rowgroup">Demografia</th>
-          <td>População</td>
-          <td>506.892 hab</td>
-        </tr>
-        <tr>
-          <td>densidade populacional</td>
-          <td>5066 hab/km<sup>2</sup></td>
-        </tr>
-        <tr>
-          <th rowspan="3" scope="rowgroup">Geografia</th>
-          <td>Área</td>
-          <td>100km<sup>2</sup></td>
-        </tr>
-        <tr>
-          <td>Região</td>
-          <td>Lisboa</td>
-        </tr>
-        <tr>
-          <td>País</td>
-          <td>Portugal</td>
-        </tr>
-        <tr>
-          <th scope="row">Website</th>
-          <td colspan="2">
-            <a href="https://www.cm-lisboa.pt">www.cm-lisboa.pt</a>
-          </td>
-        </tr>
-      </table>
-      <ol>
-        <li>
-          Lisboa é uma das capitais mais antigas da Europa, sendo anterior à
-          fundação de Portugal.
-        </li>
-        <li>
-          O elétrico 28 é um dos símbolos da cidade e percorre vários bairros
-          históricos, incluindo Alfama e Graça.
-        </li>
-        <li>
-          O terramoto de 1755 destruiu grande parte de Lisboa. A reconstrução da
-          Baixa foi planeada pelo Marquês de Pombal, dando origem à chamada
-          Baixa Pombalina.
-        </li>
-        <li>
-          Lisboa tem sete colinas, segundo a tradição, embora existam discussões
-          sobre quais colinas devem ser contabilizadas.
-        </li>
-        <li>
-          A Ponte 25 de Abril foi inaugurada em 1966 e, devido ao seu aspeto, é
-          frequentemente comparada à Golden Gate Bridge de São Francisco.
-        </li>
-      </ol>
+      <div class="grelha-info">
+        <div class="celula celula-intro">
+          <p>
+            Lisboa é a capital de Portugal e uma das cidades mais antigas da
+            Europa. Na tabela abaixo encontra os principais dados sobre a sua
+            população, área e localização, seguidos de algumas curiosidades
+            sobre a sua história, os seus monumentos e os símbolos que fazem
+            parte da identidade da cidade.
+          </p>
+        </div>
+
+        <div class="celula celula-ponte">
+          <img src="images/local5.jpg" alt="Ponte na neblina" />
+        </div>
+
+        <div class="celula celula-tabela">
+          <table>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Demografia</th>
+              <td>População</td>
+              <td>506.892 hab</td>
+            </tr>
+            <tr>
+              <td>Densidade populacional</td>
+              <td>5066 hab/km<sup>2</sup></td>
+            </tr>
+            <tr>
+              <th rowspan="3" scope="rowgroup">Geografia</th>
+              <td>Área</td>
+              <td>100km<sup>2</sup></td>
+            </tr>
+            <tr>
+              <td>Região</td>
+              <td>Lisboa</td>
+            </tr>
+            <tr>
+              <td>País</td>
+              <td>Portugal</td>
+            </tr>
+            <tr>
+              <th scope="row">Website</th>
+              <td colspan="2">
+                <a href="https://www.cm-lisboa.pt">www.cm-lisboa.pt</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="celula celula-barcos">
+          <img src="images/local1.jpg" alt="Barcos coloridos no rio" />
+        </div>
+
+        <div class="celula celula-edificio">
+          <img src="images/local4.jpg" alt="Edifício geométrico" />
+        </div>
+
+        <!-- espaço vazio -->
+        <div class="celula celula-vazio"></div>
+
+        <div class="celula celula-curiosidades">
+          <ol>
+            <li>
+              Lisboa é uma das capitais mais antigas da Europa, sendo anterior à
+              fundação de Portugal.
+            </li>
+            <li>
+              O elétrico 28 percorre vários bairros históricos, incluindo Alfama
+              e Graça.
+            </li>
+            <li>
+              O terramoto de 1755 destruiu grande parte de Lisboa. A
+              reconstrução foi planeada pelo Marquês de Pombal.
+            </li>
+            <li>Lisboa tem sete colinas, segundo a tradição.</li>
+            <li>
+              A Ponte 25 de Abril é frequentemente comparada à Golden Gate
+              Bridge de São Francisco.
+            </li>
+          </ol>
+        </div>
+
+        <div class="celula celula-farol">
+          <img src="images/local6.jpg" alt="Farol ao pôr do sol" />
+        </div>
+
+        <div class="celula celula-mar">
+          <img src="images/local2.jpg" alt="Mar com pedras e montanhas" />
+        </div>
+
+        <div class="celula celula-barco-aereo">
+          <img src="images/local3.jpg" alt="Barco visto do ar" />
+        </div>
+      </div>
     </main>
     <footer>
       <p>DIW 2026</p>
