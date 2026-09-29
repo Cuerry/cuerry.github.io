@@ -335,3 +335,14 @@ nav ul li a:hover {
 .artigos-tutoriais article iframe {
   border: 0;
 }
+
+.codepen{
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  margin: 1em 0;
+  padding: 1em;
+}
