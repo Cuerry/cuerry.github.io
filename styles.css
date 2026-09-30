@@ -190,8 +190,9 @@ footer {
   }
 
   .hero {
-    padding: 0 20px;
-  }
+  padding: 0 20px;
+  width: 100%;
+}
 
   .hero-texto {
     padding: 20px;
