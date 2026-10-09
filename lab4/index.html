@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício Eventos de Rato</title>
+  </head>
+  <body>
+    <!-- Elementos semânticos de HTML5 -->
+    <header>
+      <h1>Exercício de Eventos em JavaScript</h1>
+    </header>
+
+    <main>
+      <ul>
+        <!-- Linha 1: Contador -->
+        <li>
+          <span>Contador: <strong id="contador">0</strong></span>
+          <!-- ATRIBUTO 1: onclick -->
+          <button onclick="mudarContador(1)">+1</button>
+          <button onclick="mudarContador(-1)">-1</button>
+          <!-- ATRIBUTO 2: dblclick -->
+          <button ondblclick="mudarContador(0)">Duplo clique para Reset</button>
+        </li>
+
+        <!-- Linha 2: Pinta-me com botões de cor -->
+        <li>
+          <!-- ATRIBUTOS 3 e 4: mouseover e mouseout -->
+          <span
+            id="textoPinta"
+            onmouseover="destacar(true)"
+            onmouseout="destacar(false)"
+          >
+            Pinta-me
+          </span>
+          <button onclick="mudarCor('red')">Red</button>
+          <button onclick="mudarCor('blue')">Blue</button>
+          <button onclick="mudarCor('green')">Green</button>
+        </li>
+
+        <!-- Linha 3: Caixa de texto e botão -->
+        <li>
+          <label for="caixaCor">Escolha uma cor em inglês:</label>
+          <input type="text" id="caixaCor" placeholder="ex: yellow, purple" />
+          <button onclick="mudarCorPorInput()">Submeter</button>
+        </li>
+
+        <!-- Linha 4: Imagem -->
+        <li>
+          <p>Imagem (passa o rato por cima):</p>
+          <!-- ATRIBUTO 5: mousemove e pelo menos uma imagem -->
+          <img
+            src="https://via.placeholder.com/150x80"
+            alt="Exemplo"
+            onmousemove="mostrarMovimento()"
+            onmouseout="esconderMovimento()"
+          />
+          <span id="msgMove"></span>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>Trabalho Prático - Tecnologias Web</p>
+    </footer>
+
+    <!-- Ficheiro de script externo mantido -->
+    <script src="scripts/main.js"></script>
+
+    <!-- JavaScript Básico Inline -->
+    <script>
+      // 1. Contador
+      function mudarContador(valor) {
+        var num = document.getElementById("contador");
+        if (valor === 0) {
+          num.innerHTML = 0;
+        } else {
+          num.innerHTML = parseInt(num.innerHTML) + valor;
+        }
+      }
+
+      // 2. Mudar Cor do Texto Pinta-me
+      function mudarCor(cor) {
+        document.getElementById("textoPinta").style.color = cor;
+      }
+
+      function mudarCorPorInput() {
+        var corDigitada = document.getElementById("caixaCor").value;
+        if (corDigitada !== "") {
+          mudarCor(corDigitada);
+        }
+      }
+
+      // 3. Destacar Texto (mouseover e mouseout)
+      function destacar(ativo) {
+        var txt = document.getElementById("textoPinta");
+        if (ativo) {
+          txt.style.backgroundColor = "yellow";
+        } else {
+          txt.style.backgroundColor = "transparent";
+        }
+      }
+
+      // 4. Imagem (mousemove e mouseout)
+      function mostrarMovimento() {
+        document.getElementById("msgMove").innerHTML = " A mover o rato!";
+      }
+
+      function esconderMovimento() {
+        document.getElementById("msgMove").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
