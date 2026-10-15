@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interações JS</title>
+  </head>
+  <body>
+    <ol>
+      <li>
+        <span id="msg-hover">Passa por aqui!</span>
+      </li>
+
+      <li>
+        <span id="msg-color">Pinta-me!</span>
+        <button class="color" data-color="purple">Purple</button>
+        <button class="color" data-color="orange">Orange</button>
+        <button class="color" data-color="teal">Teal</button>
+      </li>
+
+      <li>
+        <span id="msg-escrever">Experimenta escrever...</span>
+        <input type="text" id="input-escrever" />
+      </li>
+
+      <li>
+        <span>Escolhe uma cor</span>
+        <select id="select-cor">
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+        </select>
+      </li>
+
+      <li>
+        <button id="btn-incrementar">Incrementar</button>
+        <button id="btn-decrementar">Decrementar</button>
+        <button id="btn-reset">Reset</button>
+        <span id="valor-conta">0</span>
+      </li>
+
+      <li>
+        <form id="form-utilizador">
+          <input id="nome" type="text" placeholder="insira o seu nome" />
+          <input id="idade" type="text" placeholder="insira a sua idade" />
+          <input type="submit" />
+        </form>
+        <p id="msg-form"></p>
+      </li>
+
+      <li><span>Automatic Counter: </span><span id="valor-auto">0</span></li>
+
+      <li>
+        <select id="select-flex">
+          <option value="row">row</option>
+          <option value="row-reverse">row-reverse</option>
+          <option value="column">column</option>
+          <option value="column-reverse">column-reverse</option>
+        </select>
+        <div
+          id="container-flex"
+          style="
+            width: 100%;
+            height: 200px;
+            background: grey;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px;
+          "
+        >
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: green;
+            "
+          ></div>
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: green;
+            "
+          ></div>
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: green;
+            "
+          ></div>
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: green;
+            "
+          ></div>
+        </div>
+      </li>
+    </ol>
+
+    <script>
+      // 1. Hover
+      const msgHover = document.getElementById("msg-hover");
+      msgHover.addEventListener("mouseover", function () {
+        msgHover.textContent = "Obrigado por passares!";
+      });
+      msgHover.addEventListener("mouseout", function () {
+        msgHover.textContent = "Passa por aqui!";
+      });
+
+      // 2. Pintar
+      const msgColor = document.getElementById("msg-color");
+
+      document.querySelectorAll("button.color").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          msgColor.style.color = botao.dataset.color;
+        });
+      });
+
+      // 3. Escrever
+      const inputEscrever = document.getElementById("input-escrever");
+      let contadorCores = 0;
+
+      inputEscrever.addEventListener("input", function () {
+        contadorCores = contadorCores + 1;
+
+        if (contadorCores === 1) {
+          inputEscrever.style.backgroundColor = "lightblue";
+        } else if (contadorCores === 2) {
+          inputEscrever.style.backgroundColor = "orange";
+        } else if (contadorCores === 3) {
+          inputEscrever.style.backgroundColor = "yellow";
+        } else if (contadorCores === 4) {
+          inputEscrever.style.backgroundColor = "black";
+          contadorCores = 0;
+        }
+      });
+
+      // 4. Background com select e this
+      document
+        .getElementById("select-cor")
+        .addEventListener("change", function () {
+          document.body.style.backgroundColor = this.value;
+        });
+
+      // 5. Contador com localStorage
+
+      // variáveis
+      const valorConta = document.getElementById("valor-conta");
+
+      if (!localStorage.getItem("contador")) {
+        localStorage.setItem("contador", 0);
+      }
+
+      // atualizar o ecrã ao carregar a página
+      valorConta.textContent = localStorage.getItem("contador");
+
+      // event handlers
+      const incrementar = () => {
+        let contador = parseInt(localStorage.getItem("contador"));
+        contador = contador + 1;
+        localStorage.setItem("contador", contador);
+        valorConta.textContent = contador;
+      };
+
+      const decrementar = () => {
+        let contador = parseInt(localStorage.getItem("contador"));
+        contador = contador - 1;
+        localStorage.setItem("contador", contador);
+        valorConta.textContent = contador;
+      };
+
+      const reset = () => {
+        localStorage.setItem("contador", 0);
+        valorConta.textContent = 0;
+      };
+
+      // event listeners
+      document
+        .getElementById("btn-incrementar")
+        .addEventListener("click", incrementar);
+      document
+        .getElementById("btn-decrementar")
+        .addEventListener("click", decrementar);
+      document.getElementById("btn-reset").addEventListener("click", reset);
+
+      // 7. Formulário onsubmit
+      document.querySelector("form").onsubmit = (event) => {
+        event.preventDefault();
+        const nome = document.getElementById("nome").value;
+        const idade = document.getElementById("idade").value;
+        document.getElementById("msg-form").textContent =
+          "Olá, o " + nome + " tem " + idade + "!";
+      };
+
+      // 7. Automatic Counter
+      let contadorAuto = 0;
+      const valorAuto = document.getElementById("valor-auto");
+
+      function count() {
+        contadorAuto = contadorAuto + 1;
+        valorAuto.textContent = contadorAuto;
+      }
+
+      setInterval(count, 1000);
+
+      // 6. Flex direction
+      document
+        .getElementById("select-flex")
+        .addEventListener("change", function () {
+          document.getElementById("container-flex").style.flexDirection =
+            this.value;
+        });
+    </script>
+  </body>
+</html>
