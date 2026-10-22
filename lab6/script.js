@@ -1,6 +1,5 @@
 // A. variáveis
 const nodeInputNumero = document.querySelector('input[type="number"]');
-const nodeInputSubmit = document.querySelector('input[type="submit"]');
 const nodeUlColecao = document.querySelector('#colecao ul');
 const nodeContador = document.querySelector('#colecao h3 span');
 const nodeUlRepetidos = document.querySelector('#repetidos ul');
