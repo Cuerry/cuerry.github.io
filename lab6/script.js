@@ -1,6 +1,6 @@
 // A. variáveis
-const nodeInputNumero = document.querySelector('#colecao form input[type="number"]');
-const nodeInputSubmit = document.querySelector('#colecao form input[type="submit"]');
+const nodeInputNumero = document.querySelector('input[type="number"]');
+const nodeInputSubmit = document.querySelector('input[type="submit"]');
 const nodeUlColecao = document.querySelector('#colecao ul');
 const nodeContador = document.querySelector('#colecao h3 span');
 const nodeUlRepetidos = document.querySelector('#repetidos ul');
@@ -30,6 +30,8 @@ function guardaCarta() {
         localStorage.setItem('colecao', JSON.stringify(colecao));
         atualizaLista(colecao, nodeUlColecao, nodeContador);
     }
+
+    nodeInputNumero.value = '';
 }
 
 function atualizaLista(lista, nodeUl, nodeSpan) {

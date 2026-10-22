@@ -1,17 +1,31 @@
-main{
-    background-color: lightgreen;
+main {
+    background-color: lightcoral;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 20px;
-}
-
-section{
-    border: 1px solid grey;
-    padding: 20px;
-    margin: auto;
-}
-
-form{
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+section {
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 10px;
+    background: cyan;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-eliminar {
+    margin-left: 10px;
+    background: salmon;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
