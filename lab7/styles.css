@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    padding: 1rem;
+}
+
+article img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.preco {
+    font-weight: bold;
+    color: #2a7ae2;
+}
+
+.categoria {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+article {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    max-width: 300px;
+}
