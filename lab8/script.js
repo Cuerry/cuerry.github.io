@@ -2,6 +2,9 @@
 const divProdutos = document.querySelector('#produtos');
 const divCesto = document.querySelector('#produtos-cesto');
 const spanTotal = document.querySelector('#preco-total');
+const selectCategoria = document.querySelector('#select-categoria');
+const selectOrdem = document.querySelector('#select-ordem');
+const inputPesquisa = document.querySelector('#input-pesquisa');
 
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
@@ -93,8 +96,76 @@ function atualizaCesto() {
     spanTotal.textContent = total.toFixed(2);
 }
 
+function carregarCategorias() {
+    fetch('https://deisishop.pw.deisi.ulusofona.pt/categories')
+        .then(resposta => resposta.json())
+        .then(categorias => {
+            categorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria.name;
+                option.textContent = categoria.name;
+                selectCategoria.append(option);
+            });
+        })
+        .catch(erro => console.log(erro));
+}
+
 // D. Event Listeners
 
+selectCategoria.addEventListener('change', () => {
+    const categoriaEscolhida = selectCategoria.value;
+
+    if (categoriaEscolhida === '') {
+        fetch('https://deisishop.pw.deisi.ulusofona.pt/products')
+            .then(resposta => resposta.json())
+            .then(produtos => renderizarProdutos(produtos))
+            .catch(erro => console.log(erro));
+    } else {
+        fetch('https://deisishop.pw.deisi.ulusofona.pt/products?category=' + categoriaEscolhida)
+            .then(resposta => resposta.json())
+            .then(produtos => renderizarProdutos(produtos))
+            .catch(erro => console.log(erro));
+    }
+});
+
+selectOrdem.addEventListener('change', () => {
+    const ordem = selectOrdem.value;
+    const categoria = selectCategoria.value;
+    let url = 'https://deisishop.pw.deisi.ulusofona.pt/products';
+
+    if (categoria !== '') {
+        url = url + '?category=' + categoria;
+    }
+
+    if (ordem !== '') {
+        url = url + (categoria !== '' ? '&' : '?') + 'sort=' + ordem;
+    }
+
+    fetch(url)
+        .then(resposta => resposta.json())
+        .then(produtos => renderizarProdutos(produtos))
+        .catch(erro => console.log(erro));
+});
+
+inputPesquisa.addEventListener('input', () => {
+    const pesquisa = inputPesquisa.value;
+    let url = 'https://deisishop.pw.deisi.ulusofona.pt/products';
+
+    if (pesquisa !== '') {
+        url = url + '?search=' + pesquisa;
+    }
+
+    fetch(url)
+        .then(resposta => resposta.json())
+        .then(produtos => renderizarProdutos(produtos))
+        .catch(erro => console.log(erro));
+});
+
 // E. Inicialização
-renderizarProdutos(produtos);
+fetch('https://deisishop.pw.deisi.ulusofona.pt/produtos')
+    .then(resposta => resposta.json())
+    .then(produtos => renderizarProdutos(produtos))
+    .catch(erro => console.log(erro));
+    
 atualizaCesto();
+carregarCategorias();
