@@ -1,4 +1,5 @@
 // A. Estado e variáveis com referência de elementos do DOM
+let todosProdutos = [];
 const divProdutos = document.querySelector('#produtos');
 const divCesto = document.querySelector('#produtos-cesto');
 const spanTotal = document.querySelector('#preco-total');
@@ -74,8 +75,39 @@ function criaProdutoCesto(produto) {
     return article;
 }
 
+function aplicarFiltros() {
+    let produtosFiltrados = [...todosProdutos];
+
+    // Filtrar por categoria
+    if (selectCategoria.value !== '') {
+        produtosFiltrados = produtosFiltrados.filter(produto =>
+            produto.category === selectCategoria.value
+        );
+    }
+
+    // Ordenar por preço
+    if (selectOrdem.value === 'asc') {
+        produtosFiltrados.sort((a, b) => Number(a.price) - Number(b.price));
+    } else if (selectOrdem.value === 'desc') {
+        produtosFiltrados.sort((a, b) => Number(b.price) - Number(a.price));
+    }
+
+    // Pesquisar produtos
+    if (inputPesquisa.value !== '') {
+        const pesquisa = inputPesquisa.value.toLowerCase();
+
+        produtosFiltrados = produtosFiltrados.filter(produto =>
+            produto.title.toLowerCase().includes(pesquisa)
+        );
+    }
+
+    renderizarProdutos(produtosFiltrados);
+}
+
 // C. Event handlers
 function renderizarProdutos(produtos) {
+    divProdutos.innerHTML = '';
+
     produtos.forEach(produto => {
         const article = criarProduto(produto);
         divProdutos.append(article);
@@ -90,7 +122,7 @@ function atualizaCesto() {
     selecionados.forEach(produto => {
         const article = criaProdutoCesto(produto);
         divCesto.append(article);
-        total = total + produto.price;
+        total = total + Number(produto.price);
     });
 
     spanTotal.textContent = total.toFixed(2);
@@ -110,62 +142,51 @@ function carregarCategorias() {
         .catch(erro => console.log(erro));
 }
 
-// D. Event Listeners
-
-selectCategoria.addEventListener('change', () => {
-    const categoriaEscolhida = selectCategoria.value;
-
-    if (categoriaEscolhida === '') {
-        fetch('https://deisishop.pw.deisi.ulusofona.pt/products')
-            .then(resposta => resposta.json())
-            .then(produtos => renderizarProdutos(produtos))
-            .catch(erro => console.log(erro));
-    } else {
-        fetch('https://deisishop.pw.deisi.ulusofona.pt/products?category=' + categoriaEscolhida)
-            .then(resposta => resposta.json())
-            .then(produtos => renderizarProdutos(produtos))
-            .catch(erro => console.log(erro));
-    }
-});
-
-selectOrdem.addEventListener('change', () => {
-    const ordem = selectOrdem.value;
+function carregarProdutos() {
     const categoria = selectCategoria.value;
+    const ordem = selectOrdem.value;
+    const pesquisa = inputPesquisa.value;
+
     let url = 'https://deisishop.pw.deisi.ulusofona.pt/products';
 
+    const parametros = new URLSearchParams();
+
     if (categoria !== '') {
-        url = url + '?category=' + categoria;
+        parametros.append('category', categoria);
     }
 
     if (ordem !== '') {
-        url = url + (categoria !== '' ? '&' : '?') + 'sort=' + ordem;
+        parametros.append('sort', ordem);
     }
-
-    fetch(url)
-        .then(resposta => resposta.json())
-        .then(produtos => renderizarProdutos(produtos))
-        .catch(erro => console.log(erro));
-});
-
-inputPesquisa.addEventListener('input', () => {
-    const pesquisa = inputPesquisa.value;
-    let url = 'https://deisishop.pw.deisi.ulusofona.pt/products';
 
     if (pesquisa !== '') {
-        url = url + '?search=' + pesquisa;
+        parametros.append('search', pesquisa);
+    }
+
+    if (parametros.toString() !== '') {
+        url = url + '?' + parametros.toString();
     }
 
     fetch(url)
         .then(resposta => resposta.json())
         .then(produtos => renderizarProdutos(produtos))
         .catch(erro => console.log(erro));
-});
+}
+
+// D. Event Listeners
+
+selectCategoria.addEventListener('change', aplicarFiltros);
+selectOrdem.addEventListener('change', aplicarFiltros);
+inputPesquisa.addEventListener('input', aplicarFiltros);
 
 // E. Inicialização
-fetch('https://deisishop.pw.deisi.ulusofona.pt/produtos')
+fetch('https://deisishop.pw.deisi.ulusofona.pt/products')
     .then(resposta => resposta.json())
-    .then(produtos => renderizarProdutos(produtos))
+    .then(produtos => {
+        todosProdutos = produtos;
+        aplicarFiltros();
+    })
     .catch(erro => console.log(erro));
-    
+
 atualizaCesto();
 carregarCategorias();
